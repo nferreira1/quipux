@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Person API — Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <b>Person API</b>
+    <span>console</span>
+  </div>
+  <div class="keybox">
+    <label for="apikey">Chave de API</label>
+    <input id="apikey" type="password" class="mono" value="quipux-secret-key" autocomplete="off">
+    <span class="keystate on" id="keystate">definida</span>
+  </div>
+</header>
+
+<div class="shell">
+
+  <nav id="nav" aria-label="Operações">
+    <button type="button" data-op="create" aria-current="true"><span class="verb post">POST</span> Cadastrar</button>
+    <button type="button" data-op="list"><span class="verb get">GET</span> Listar</button>
+    <button type="button" data-op="find"><span class="verb get">GET</span> Buscar</button>
+    <button type="button" data-op="nationality"><span class="verb get">GET</span> Nacionalidade</button>
+    <button type="button" data-op="remove"><span class="verb del">DEL</span> Excluir</button>
+  </nav>
+
+  <main>
+    <div class="panel-head">
+      <h1 id="op-title"></h1>
+      <p id="op-desc"></p>
+      <span class="route" id="op-route"></span>
+    </div>
+
+    <form id="form" autocomplete="off" novalidate></form>
+
+    <section class="response">
+      <div class="response-head">
+        <h2>Resposta</h2>
+        <span class="status" id="status">aguardando</span>
+      </div>
+      <div class="response-body" id="out">
+        <p class="idle">Envie uma requisição para ver o resultado.</p>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/operations.js"></script>
+<script src="js/api.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
